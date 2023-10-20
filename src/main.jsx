@@ -10,11 +10,14 @@ import Root from "./routes/root";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Addproduct from "./Components/Addproduct";
-import Mycart from "./Components/Mycart";
+
 import About from "./Components/About";
 import ProductCollection from "./Components/ProductCollection";
 import AuthProvider from "./Components/Providers/AuthProvider";
 import ProductEachDeatils from "./Components/ProductEachDeatils";
+
+import Cart from "./Components/Cart";
+
 
 
 const router = createBrowserRouter([
@@ -40,8 +43,9 @@ const router = createBrowserRouter([
         element: <Addproduct></Addproduct>
       },
       {
-        path:"/mycart",
-        element: <Mycart></Mycart>
+        path:"/cart",
+        loader: ({params}) => fetch(`http://localhost:5000/cart${params.email}`),
+        element: <Cart></Cart>
       },
       {
         path:"/about",

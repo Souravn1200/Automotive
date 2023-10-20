@@ -19,7 +19,7 @@ const Navbar = () => {
     <li className='mr-1'> <NavLink to="/login">Login</NavLink></li>
     <li className='mr-1'><NavLink to="/register">Register</NavLink></li>
     <li className='mr-1'><NavLink to="/addproduct">Add Product</NavLink></li>
-    <li className='mr-1'><NavLink to="/mycart">My Cart</NavLink></li>
+    <li className='mr-1'><NavLink to="/cart">My Cart</NavLink></li>
     <li className='mr-1'><NavLink to="/about">About</NavLink></li>
  
     </>
