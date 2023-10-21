@@ -52,28 +52,28 @@ const Cart = () => {
   return (
     <div className='mx-auto w-[1200px]'>
       <div className="carousel w-full mt-5">
-  <div id="slide1" className="carousel-item relative w-full">
+  <div id="slide1" className="carousel-item relative w-full h-[500px]">
     <img src="https://i.ibb.co/0Q9tsZF/1697874809960.jpg" className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide4" className="btn btn-circle">❮</a> 
       <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
   </div> 
-  <div id="slide2" className="carousel-item relative w-full">
-    <img src="https://i.ibb.co/0Q9tsZF/1697874809960.jpg" className="w-full" />
+  <div id="slide2" className="carousel-item relative w-full h-[500px]">
+    <img src="https://i.ibb.co/GWv5rDm/Screenshot-2023-10-21-163031.png" className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide1" className="btn btn-circle">❮</a> 
       <a href="#slide3" className="btn btn-circle">❯</a>
     </div>
   </div> 
-  <div id="slide3" className="carousel-item relative w-full">
-    <img src="https://i.ibb.co/0Q9tsZF/1697874809960.jpg" className="w-full" />
+  <div id="slide3" className="carousel-item relative w-full h-[500px]">
+    <img src="https://i.ibb.co/rdrBFZH/c3.png" className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide2" className="btn btn-circle">❮</a> 
       <a href="#slide4" className="btn btn-circle">❯</a>
     </div>
   </div> 
-  <div id="slide4" className="carousel-item relative w-full">
+  <div id="slide4" className="carousel-item relative w-full h-[500px]">
     <img src="https://i.ibb.co/0Q9tsZF/1697874809960.jpg" className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide3" className="btn btn-circle">❮</a> 
@@ -121,7 +121,7 @@ const Cart = () => {
       </div>
     ) : (
       <div>
-        <p>Your cart is empty.</p>
+        <p className='mx-auto'>Your cart is empty.</p>
       </div>
     )}
   </div>
