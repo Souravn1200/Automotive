@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 
 
-const ProdcutDetails = ({product}) => {
+const ProdcutDetails = ({product, renderingProduct, setrenderingProduct}) => {
 
     const {_id,name, brand, type, photo, price, description, rating} = product
 
@@ -31,6 +31,9 @@ swal({
           icon: "success",
         });
       }
+
+      const remainig = renderingProduct.filter(rp=> rp._id !== _id)
+      setrenderingProduct(remainig)
     })
   } 
   // else {
@@ -41,7 +44,7 @@ swal({
 });
     }
 
-    
+
     return (
     
         <div className='mx-auto mt-4'>
@@ -62,7 +65,7 @@ swal({
     <div className='flex gap-5 mt-5'>
     <Link to={`/product/${_id}`}><button className='btn btn-accent'>See Details</button></Link>
     <button className='btn btn-warning' onClick={() => handleDelete(_id)}> Delete </button>
-    <Link><button className='btn btn-neutral'> Update </button></Link>
+    <Link to={`/update/${_id}`}><button className='btn btn-neutral'> Update </button></Link>
     
     </div>
  

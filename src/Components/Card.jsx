@@ -7,11 +7,11 @@ const Card = ({eachData}) => {
     return (
         <div >
         
-        <div className=" shadow-xl bg-[#596366] " data-aos="flip-right">
+        <div className=" " data-aos="flip-right">
         <Link to={`/products/${name}`}>
-<figure><img className="h-[220px] w-full" src={image} alt="Shoes" /></figure>
+<figure><img className="h-[110px] w-full" src={image} alt="Shoes" /></figure>
 
-<h2 className="mx-4 my-4 text-center">{name}</h2>
+<h2 className="mx-4 my-4 text-center text-2xl">{name}</h2>
 
 </Link>
 

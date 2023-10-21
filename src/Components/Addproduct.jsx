@@ -2,7 +2,7 @@ import React from 'react';
 import swal from 'sweetalert';
 
 const Addproduct = () => {
-    const handleRegister = (e) => {
+    const handleAddProduct = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name') 
@@ -32,7 +32,7 @@ const Addproduct = () => {
     }
     return (
         <div>
-             <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto">
+             <form onSubmit={handleAddProduct} className=" md:w-3/4 lg:w-1/2 mx-auto">
                 <div className='flex gap-60'> 
                 <div> 
                 <div className="form-control">

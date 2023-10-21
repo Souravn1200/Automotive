@@ -17,6 +17,7 @@ import AuthProvider from "./Components/Providers/AuthProvider";
 import ProductEachDeatils from "./Components/ProductEachDeatils";
 
 import Cart from "./Components/Cart";
+import ProductUpdate from "./Components/ProductUpdate";
 
 
 
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`),
         element: <ProductEachDeatils></ProductEachDeatils>
 
+      },{
+        path: '/update/:id',
+        element: <ProductUpdate></ProductUpdate>,
+        loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
       }
       
     ],
