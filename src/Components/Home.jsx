@@ -7,7 +7,7 @@ const Home = () => {
     return (
         
         <div className='grid lg:grid-cols-3 gap-6 mt-6'>
-            {data.map(eachData => <Card key={eachData.id} eachData={eachData}></Card>)}
+            {data?.length && data?.map(eachData => <Card key={eachData.id} eachData={eachData}></Card>)}
         </div>
     );
 };

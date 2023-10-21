@@ -20,7 +20,7 @@ swal({
 .then((willDelete) => {
   if (willDelete) {
     
-    fetch(`http://localhost:5000/products/${_id}`, {
+    fetch(`https://automotive-server-theta.vercel.app/products/${_id}`, {
       method: 'DELETE'
     })
     .then(res => res.json())

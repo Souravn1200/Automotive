@@ -23,7 +23,7 @@ const ProductUpdate = () => {
         const updatedProduct =  {name, brand, type, photo, price, description, rating}
         console.log(updatedProduct);
 
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://automotive-server-theta.vercel.app/update/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

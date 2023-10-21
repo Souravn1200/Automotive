@@ -8,11 +8,13 @@ const ProductCollection = () => {
     const lodedProducts = useLoaderData();
     const [renderingProduct, setrenderingProduct] = useState(lodedProducts)
 
+    console.log(renderingProduct);
+
     return (
         <div className='grid lg:grid-cols-3 gap-2 mt-6'>
             
             {
-             renderingProduct.map(product => <ProdcutDetails key={product._id} product={product} renderingProduct={renderingProduct} setrenderingProduct={setrenderingProduct}></ProdcutDetails>)
+             renderingProduct?.length && renderingProduct?.map(product => <ProdcutDetails key={product._id} product={product} renderingProduct={renderingProduct} setrenderingProduct={setrenderingProduct}></ProdcutDetails>)
             
             }
         </div>

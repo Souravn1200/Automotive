@@ -16,7 +16,7 @@ const Addproduct = () => {
         const newProduct =  {name, brand, type, photo, price, description, rating}
         console.log(newProduct);
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://automotive-server-theta.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

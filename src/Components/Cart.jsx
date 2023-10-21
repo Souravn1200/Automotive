@@ -10,7 +10,7 @@ const Cart = () => {
 
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/cart/${email}`)
+      fetch(`https://automotive-server-theta.vercel.app/cart/${email}`)
             .then((res) => res.json())
 
         .then((data) => { 
@@ -24,7 +24,7 @@ const Cart = () => {
 
   const handleDelete = _id => {
 
-    fetch(`http://localhost:5000/cart/${_id}`, {
+    fetch(`https://automotive-server-theta.vercel.app/cart/${_id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json'
@@ -84,7 +84,7 @@ const Cart = () => {
 
     {cartData.length > 0 ? (
       <div className='grid lg:grid-cols-3 gap-2 mt-6'>
-        {cartData.map((item) => (
+        {cartData?.length && cartData?.map((item) => (
           <div key={item?._id} >
             <div className='mx-auto mt-4'>
            

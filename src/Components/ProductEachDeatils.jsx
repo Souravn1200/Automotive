@@ -14,7 +14,7 @@ const ProductEachDeatils = () => {
 
 const handleAddToCart = async () =>{
     const cart = {name, brand, type, photo, price, description, rating, email};
-    await fetch('http://localhost:5000/cart', {
+    await fetch('https://automotive-server-theta.vercel.app/cart', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

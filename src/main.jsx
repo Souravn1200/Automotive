@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/cart",
-        loader: ({params}) => fetch(`http://localhost:5000/cart/${params.email}`),
+        loader: ({params}) => fetch(`https://automotive-server-theta.vercel.app/cart/${params.email}`),
         element: <PrivateRoute><Cart></Cart></PrivateRoute>
       },
       {
@@ -56,18 +56,18 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/:brand',
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.brand}`),
+        loader: ({params}) => fetch(`https://automotive-server-theta.vercel.app/products/${params.brand}`),
         element: <ProductCollection></ProductCollection>
       },
       {
         path: '/product/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`),
+        loader: ({params}) => fetch(`https://automotive-server-theta.vercel.app/product/${params.id}`),
         element: <PrivateRoute><ProductEachDeatils></ProductEachDeatils></PrivateRoute>
 
       },{
         path: '/update/:id',
         element: <ProductUpdate></ProductUpdate>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({params}) => fetch(`https://automotive-server-theta.vercel.app/product/${params.id}`)
       },
       {
         path: '*',
