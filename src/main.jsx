@@ -18,6 +18,8 @@ import ProductEachDeatils from "./Components/ProductEachDeatils";
 
 import Cart from "./Components/Cart";
 import ProductUpdate from "./Components/ProductUpdate";
+import PageNotFound from "./Components/PageNotFound";
+import PrivateRoute from "./Components/Privateroute/PrivateRoute";
 
 
 
@@ -41,12 +43,12 @@ const router = createBrowserRouter([
       },
       {
         path:"/addproduct",
-        element: <Addproduct></Addproduct>
+        element: <PrivateRoute><Addproduct></Addproduct></PrivateRoute>
       },
       {
         path:"/cart",
-        loader: ({params}) => fetch(`http://localhost:5000/cart${params.email}`),
-        element: <Cart></Cart>
+        loader: ({params}) => fetch(`http://localhost:5000/cart/${params.email}`),
+        element: <PrivateRoute><Cart></Cart></PrivateRoute>
       },
       {
         path:"/about",
@@ -60,13 +62,17 @@ const router = createBrowserRouter([
       {
         path: '/product/:id',
         loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`),
-        element: <ProductEachDeatils></ProductEachDeatils>
+        element: <PrivateRoute><ProductEachDeatils></ProductEachDeatils></PrivateRoute>
 
       },{
         path: '/update/:id',
         element: <ProductUpdate></ProductUpdate>,
         loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
-      }
+      },
+      {
+        path: '*',
+        element: <PageNotFound></PageNotFound>
+    }
       
     ],
   },

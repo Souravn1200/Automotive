@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
+import { AuthContext } from './Providers/AuthProvider';
 
 
 const ProdcutDetails = ({product, renderingProduct, setrenderingProduct}) => {
-
+  const { user } = useContext(AuthContext);
     const {_id,name, brand, type, photo, price, description, rating} = product
 
     const handleDelete = _id => {
@@ -63,11 +64,25 @@ swal({
       <div className="badge badge-outline">{type}</div> 
     </div>
     <div className='flex gap-5 mt-5'>
-    <Link to={`/product/${_id}`}><button className='btn btn-accent'>See Details</button></Link>
-    <button className='btn btn-warning' onClick={() => handleDelete(_id)}> Delete </button>
-    <Link to={`/update/${_id}`}><button className='btn btn-neutral'> Update </button></Link>
-    
+  {user ? (
+    <div className='flex gap-5 mt-5'>
+      <Link to={`/product/${_id}`}>
+        <button className='btn btn-accent'>See Details</button>
+      </Link>
+      <button className='btn btn-warning' onClick={() => handleDelete(_id)}>Delete</button>
+      <Link to={`/update/${_id}`}>
+        <button className='btn btn-neutral'>Update</button>
+      </Link>
     </div>
+  ) : (
+    <div className='mx-auto'>
+      <Link to={`/product/${_id}`}>
+        <button className='btn btn-accent'>See Details</button>
+      </Link>
+    </div>
+  )}
+</div>
+
  
 
   </div>

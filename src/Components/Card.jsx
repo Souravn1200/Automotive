@@ -1,7 +1,9 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const Card = ({eachData}) => {
+
+  
 
     const {id, name, image} = eachData
     return (

@@ -1,16 +1,19 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import { AuthContext } from './Providers/AuthProvider';
 
 const ProductEachDeatils = () => {
+    const { user } = useContext(AuthContext);
+    const email = user?.email;
     const id = useParams();
     // const myData = useLoaderData();
     const {_id,name, brand, type, photo, price, description, rating} = useLoaderData();
 
 
 const handleAddToCart = async () =>{
-    const cart = {_id,name, brand, type, photo, price, description, rating};
+    const cart = {name, brand, type, photo, price, description, rating, email};
     await fetch('http://localhost:5000/cart', {
         method: 'POST',
         headers: {
